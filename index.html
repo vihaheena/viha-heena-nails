@@ -2,28 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Viha Henna & Nails by Priya</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: #fff5f8;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #5a3e36;
     }
     header {
-      background: #fcd7dd;
+      background: rgba(252, 215, 221, 0.9);
       padding: 30px 20px;
       text-align: center;
       border-bottom: 2px solid #e8b7be;
+    }
+    header img {
+      height: 80px;
+      margin-bottom: 10px;
     }
     header h1 {
       margin: 0;
       font-size: 2.5em;
     }
     nav {
-      background: #fce4e9;
+      background: rgba(252, 228, 233, 0.95);
       padding: 10px;
       text-align: center;
     }
@@ -36,8 +41,9 @@
     section {
       padding: 40px 20px;
       text-align: center;
+      background-color: rgba(255, 255, 255, 0.9);
     }
-    .services, .gallery {
+    .services, .gallery, .live {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -53,6 +59,7 @@
     .card img {
       width: 100%;
       border-radius: 10px;
+      cursor: pointer;
     }
     form input, form textarea {
       width: 90%;
@@ -80,6 +87,7 @@
 <body>
 
 <header>
+  <img src="logo.png" alt="Viha Henna & Nails Logo">
   <h1>Viha Henna & Nails by Priya</h1>
   <p>Bridal Heena | Nail Art | Certified Courses | Home Visit Available</p>
 </header>
@@ -87,6 +95,7 @@
 <nav>
   <a href="#services">Services</a>
   <a href="#gallery">Gallery</a>
+  <a href="#live">Live Work</a>
   <a href="#booking">Book</a>
   <a href="#contact">Contact</a>
 </nav>
@@ -96,22 +105,22 @@
   <div class="services">
     <div class="card">
       <h3>Bridal Heena</h3>
-      <img src="bridal_heena.jpg" alt="Bridal Heena">
+      <a href="gallery/bridal"><img src="bridal_heena.jpg" alt="Bridal Heena"></a>
       <p>Beautiful bridal designs with deep stain and intricate detailing.</p>
     </div>
     <div class="card">
       <h3>Gel Polish</h3>
-      <img src="gel_nails.jpg" alt="Gel Nails">
+      <a href="gallery/gel"><img src="gel_nails.jpg" alt="Gel Nails"></a>
       <p>Glossy, long-lasting gel polish for everyday glam.</p>
     </div>
     <div class="card">
       <h3>Extension Nails</h3>
-      <img src="extensions.jpg" alt="Extensions">
+      <a href="gallery/extensions"><img src="extensions.jpg" alt="Extensions"></a>
       <p>Stylish nail extensions with durable finishes in custom styles.</p>
     </div>
     <div class="card">
       <h3>Occasional Heena</h3>
-      <img src="sidus_heena.jpg" alt="Occasional Heena">
+      <a href="gallery/occasional"><img src="sidus_heena.jpg" alt="Occasional Heena"></a>
       <p>Perfect henna for festivals, parties, and family events.</p>
     </div>
   </div>
@@ -124,10 +133,21 @@
     <div class="card"><img src="design2.jpg" alt="Design 2"></div>
     <div class="card"><img src="design3.jpg" alt="Design 3"></div>
   </div>
+  <p><a href="gallery/index.html" target="_blank">See Full Gallery</a></p>
+</section>
+
+<section id="live">
+  <h2>Live Nails & Mehendi Pictures</h2>
+  <div class="live">
+    <div class="card"><img src="live1.jpg" alt="Live Nail Art"></div>
+    <div class="card"><img src="live2.jpg" alt="Live Mehendi"></div>
+    <div class="card"><img src="live3.jpg" alt="Live Session"></div>
+  </div>
 </section>
 
 <section id="booking">
   <h2>Book Appointment</h2>
+  <p><strong>Call / WhatsApp:</strong> +91 9820490762 / 9820490460</p>
   <form action="https://formspree.io/f/your-form-id" method="POST">
     <input type="text" name="name" placeholder="Your Name" required><br>
     <input type="email" name="email" placeholder="Your Email" required><br>
@@ -138,9 +158,8 @@
 
 <section id="contact">
   <h2>Contact Us</h2>
-  <p>Email: <a href="mailto:viha.heena.nails@gmail.com">vihaheenanails@gmail.com</a></p>
+  <p>Email: <a href="mailto:viha.heena.nails@gmail.com">viha.heena.nails@gmail.com</a></p>
   <p>Instagram: <a href="https://www.instagram.com/Viha_Henna&Nails_byPriya" target="_blank">@Viha_Henna&Nails_byPriya</a></p>
-  <p>Call/WhatsApp: +91 9820490762 / 9820490460</p>
   <p>Locations: Nashik | Pune | Sambhajinagar</p>
 </section>
 
