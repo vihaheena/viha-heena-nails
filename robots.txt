@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vihaheena.github.io/viha-heena-nails/sitemap.xml
