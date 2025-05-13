@@ -128,42 +128,56 @@
       }
     }
 
-    .floating-btn {
+    .fab-container {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
+      bottom: 20px;
+      right: 20px;
       z-index: 1000;
     }
 
-    .fab-main {
+    .fab-button {
       background-color: #e88b98;
-      border: none;
       color: white;
-      width: 55px;
-      height: 55px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 24px;
+      border: none;
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .fab-links {
       display: none;
       flex-direction: column;
-      align-items: flex-end;
       margin-bottom: 10px;
+      align-items: flex-end;
     }
 
     .fab-links a {
-      background-color: #fff;
+      background-color: white;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: #e88b98;
       text-decoration: none;
-      padding: 10px 12px;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       margin-bottom: 8px;
-      font-weight: bold;
-      font-size: 14px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .fab-links a:hover {
+      transform: scale(1.1);
+    }
+
+    .fab-container.open .fab-links {
+      display: flex;
     }
   </style>
 </head>
@@ -239,21 +253,19 @@
   &copy; 2019 Viha Henna & Nails by Priya | Certified by @aryannailartist & @heenabybhavna
 </footer>
 
-<div class="floating-btn">
-  <div class="fab-links" id="fabLinks">
-    <a href="https://wa.me/919730754242" target="_blank">WhatsApp</a>
-    <a href="https://www.instagram.com/henna_by_priya.__/" target="_blank">Instagram</a>
-    <a href="mailto:vihaheenanails@gmail.com">Email</a>
+<!-- Floating Action Button -->
+<div class="fab-container" id="fabContainer">
+  <div class="fab-links">
+    <a href="https://wa.me/919730754242" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:vihaheenanails@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.instagram.com/heena_by_priya.__?utm_source=qr&igsh=MW1iaTRsMGRhOHc1bw==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
   </div>
-  <button class="fab-main" onclick="toggleFab()">+</button>
+  <button class="fab-button" onclick="toggleFAB()"><i class="fas fa-plus"></i></button>
 </div>
 
 <script>
-  function toggleFab() {
-    const links = document.getElementById('fabLinks');
-    links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+  function toggleFAB() {
+    document.getElementById("fabContainer").classList.toggle("open");
   }
 </script>
 
-</body>
-</html>
