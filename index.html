@@ -127,6 +127,44 @@
         width: 90%;
       }
     }
+
+    .floating-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 1000;
+    }
+
+    .fab-main {
+      background-color: #e88b98;
+      border: none;
+      color: white;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .fab-links {
+      display: none;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-bottom: 10px;
+    }
+
+    .fab-links a {
+      background-color: #fff;
+      color: #e88b98;
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -193,13 +231,29 @@
 <section id="contact">
   <h2>Contact Us</h2>
   <p>Email: <a href="mailto:vihaheenanails@gmail.com">vihaheenanails@gmail.com</a></p>
-  <p>Instagram: <a href="https://www.instagram.com/henna_by_priya.__/?utm_source=qr&r=nametag" target="_blank">@Viha_Henna&Nails_byPriya</a></p>
+  <p>Instagram: <a href="https://www.instagram.com/henna_by_priya.__/" target="_blank">@Viha_Henna&Nails_byPriya</a></p>
   <p>Locations: Nashik | Pune | SambhajiNagar</p>
 </section>
 
 <footer>
   &copy; 2019 Viha Henna & Nails by Priya | Certified by @aryannailartist & @heenabybhavna
 </footer>
+
+<div class="floating-btn">
+  <div class="fab-links" id="fabLinks">
+    <a href="https://wa.me/919730754242" target="_blank">WhatsApp</a>
+    <a href="https://www.instagram.com/henna_by_priya.__/" target="_blank">Instagram</a>
+    <a href="mailto:vihaheenanails@gmail.com">Email</a>
+  </div>
+  <button class="fab-main" onclick="toggleFab()">+</button>
+</div>
+
+<script>
+  function toggleFab() {
+    const links = document.getElementById('fabLinks');
+    links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+  }
+</script>
 
 </body>
 </html>
