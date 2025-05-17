@@ -92,7 +92,7 @@ h2 {
   width: 100%;
   max-width: 200px; /* NEW: limit slideshow width */
   height: auto;
-  aspect-ratio: 4 / 3; /* NEW: for controlled height */
+  aspect-ratio: 1 / 1; /* NEW: for controlled height */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
