@@ -323,17 +323,29 @@
   }
 </script>
 
-<script src="js/slideshow.js"></script>
 <script>
   // Initialize mini slideshows on index page
   document.querySelectorAll('.mini-slideshow').forEach(container => {
     const images = JSON.parse(container.getAttribute('data-images'));
     let currentIndex = 0;
-    const imgElement = container.querySelector('img');
+    
+    // Create or reuse image element
+    let imgElement = container.querySelector('img');
+    if (!imgElement) {
+      imgElement = document.createElement('img');
+      container.appendChild(imgElement);
+    }
+    
+    imgElement.src = images[currentIndex];
+    imgElement.classList.add('active');
 
     setInterval(() => {
       currentIndex = (currentIndex + 1) % images.length;
-      imgElement.src = images[currentIndex];
+      imgElement.classList.remove('active');
+      setTimeout(() => {
+        imgElement.src = images[currentIndex];
+        imgElement.classList.add('active');
+      }, 300); // short delay for smooth transition
     }, 3000);
   });
 </script>
