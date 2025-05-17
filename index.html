@@ -237,9 +237,26 @@
 
 <section id="gallery">
   <h2>Our Work</h2>
-  <div class="gallery">
-    <div class="card"><img src="design1.jpg" alt="Design 1"></div>
-    <div class="card"><img src="design2.jpg" alt="Design 2"></div>
+  <div class="gallery-folders">
+
+    <!-- Mehendi Folder Card -->
+    <a href="mehendi.html" class="folder-card" aria-label="Open Mehendi Designs Gallery">
+      <h3>Mehendi Designs</h3>
+      <div class="mini-slideshow" data-images='["mehendi1.jpg", "mehendi2.jpg", "mehendi3.jpg"]'>
+        <img src="mehendi1.jpg" alt="Mehendi Design preview" />
+      </div>
+      <p class="folder-label">Click to see full gallery</p>
+    </a>
+
+    <!-- Nail Folder Card -->
+    <a href="nails.html" class="folder-card" aria-label="Open Nail Designs Gallery">
+      <h3>Nail Designs</h3>
+      <div class="mini-slideshow" data-images='["nail1.jpg", "nail2.jpg", "nail3.jpg"]'>
+        <img src="nail1.jpg" alt="Nail Design preview" />
+      </div>
+      <p class="folder-label">Click to see full gallery</p>
+    </a>
+
   </div>
 </section>
 
@@ -305,5 +322,21 @@
     document.getElementById("fabContainer").classList.toggle("open");
   }
 </script>
+
+<script src="js/slideshow.js"></script>
+<script>
+  // Initialize mini slideshows on index page
+  document.querySelectorAll('.mini-slideshow').forEach(container => {
+    const images = JSON.parse(container.getAttribute('data-images'));
+    let currentIndex = 0;
+    const imgElement = container.querySelector('img');
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      imgElement.src = images[currentIndex];
+    }, 3000);
+  });
+</script>
+
 </body>
 </html>
