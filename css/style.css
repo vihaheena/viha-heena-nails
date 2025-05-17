@@ -199,19 +199,19 @@ footer {
     width: 90%;
   }
   .mini-slideshow {
-    height: 200px;
+    height: 180px;
   }
 }
 
 /* Added for slideshow size adjustment on mobile */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .slideshow-container img {
-    max-height: 300px;
-    width: 100%;
+    max-height: 180px;
+    width: 90%;
     object-fit: cover;
   }
   .slideshow-container {
-    max-width: 100%;
+    max-width: 90%;
     overflow: hidden;
   }
 }
