@@ -89,14 +89,13 @@ h2 {
 }
 
 .mini-slideshow {
-  width: 100%;
-  max-width: 200px;
-  position: relative;
-  padding-top: 100%; /* ✅ Forces 1:1 aspect ratio */
+  width: 180px;         /* Set fixed width */
+  height: 180px;        /* Set fixed height */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
   margin-bottom: 10px;
+  position: relative;
 }
 
 .mini-slideshow img {
