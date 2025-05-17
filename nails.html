@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nail Designs | Viha Henna & Nails</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<header>
+  <h1>Nail Designs</h1>
+  <a href="index.html" class="back-link">← Back to Our Work</a>
+</header>
+
+<main class="gallery-page">
+  <div class="slideshow-container">
+    <button class="nav-arrow left-arrow" aria-label="Previous Image">&#10094;</button>
+    <img id="galleryImage" src="nail1.jpg" alt="Nail Design" />
+    <button class="nav-arrow right-arrow" aria-label="Next Image">&#10095;</button>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 Viha Henna & Nails by Priya
+</footer>
+
+<script src="js/slideshow.js"></script>
+<script>
+  const nailImages = ["nail1.jpg", "nail2.jpg", "nail3.jpg", "nail4.jpg"];
+  const galleryImage = document.getElementById('galleryImage');
+  let currentIndex = 0;
+
+  function showImage(index) {
+    currentIndex = (index + nailImages.length) % nailImages.length;
+    galleryImage.src = nailImages[currentIndex];
+  }
+
+  document.querySelector('.left-arrow').addEventListener('click', () => {
+    showImage(currentIndex - 1);
+  });
+
+  document.querySelector('.right-arrow').addEventListener('click', () => {
+    showImage(currentIndex + 1);
+  });
+</script>
+
+</body>
+</html>
